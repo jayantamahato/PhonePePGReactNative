@@ -16,6 +16,14 @@ buildscript {
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
     }
+    //Added native configuration
+    allprojects {
+    repositories {
+       maven {
+        url  "https://phonepe.mycloudrepo.io/public/repositories/phonepe-intentsdk-android"
+       }
+   }
+}
 }
 
 apply plugin: "com.facebook.react.rootproject"

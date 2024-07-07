@@ -1,79 +1,71 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
+# React Native PhonePe Intigration 
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+This React Native application integrates the PhonePe payment gateway, enabling secure and convenient transactions directly within the app. Users can seamlessly make payments, transfer funds, and complete transactions using their preferred payment methods supported by PhonePe's robust API integration. The app provides a user-friendly interface that ensures a smooth payment experience while prioritizing security and reliability. Simplify financial transactions with our app, backed by PhonePe, for an efficient and secure mobile payment solution.
 
-## Step 1: Start the Metro Server
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Authors
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- [Jayanta Mahato](https://github.com/jayantamahato)
 
-```bash
-# using npm
-npm start
 
-# OR using Yarn
-yarn start
-```
+## Features
 
-## Step 2: Start your Application
+- input amount
+- make payment
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
-### For Android
+
+## Package Installation
+
+Install PhonePe PG Package
 
 ```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+  npm i https://phonepe.mycloudrepo.io/public/repositories/phonepe-mobile-react-native-sdk/releases/v2/react-native-phonepe-pg.tgz
 ```
-
-### For iOS
+Add the below code to ‘repositories’ section of your project level build.gradle file - [code](https://github.com/jayantamahato/PhonePePGReactNative/commit/7d399e9ed22a806c6d52ee59b1804e592b8f3443)
 
 ```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+allprojects {
+    repositories {
+        maven {
+            url  "https://phonepe.mycloudrepo.io/public/repositories/phonepe-intentsdk-android"
+       }
+   }
+}
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+Install sha256 Package - [link](https://www.npmjs.com/package/react-native-sha256)
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+```bash
+npm i react-native-sha256
+```
+    
+Install Base64 Package - [link](https://www.npmjs.com/package/base-64)
 
-## Step 3: Modifying your App
+```bash
+npm i base-64
+```
+## Roadmap
 
-Now that you have successfully run the app, let's modify it.
+- phonePe funtions - [commit](https://github.com/jayantamahato/PhonePePGReactNative/commit/0994628bbc7a82d708c5943a3a22cdd77ed17825)
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+- call funtions - [commit](https://github.com/jayantamahato/PhonePePGReactNative/commit/b04196712e19e8e765e4c7f0d4dfcc950acdd2d7)
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## Screenshots
 
-## Congratulations! :tada:
+![App Screenshot](https://ik.imagekit.io/gvspmkmsw/personal/phonePePGReactNative/Screenshot_2024-07-07-23-37-08-21_7fc543eb474dc6b9b5ba7ae40a9724d1.jpg?updatedAt=1720375834450&tr=w-310%2Ch-200%2Cfo-auto)
 
-You've successfully run and modified your React Native App. :partying_face:
+![App Screenshot](https://ik.imagekit.io/gvspmkmsw/personal/phonePePGReactNative/Screenshot_2024-07-07-23-37-20-33_7fc543eb474dc6b9b5ba7ae40a9724d1.jpg?updatedAt=1720375834550&tr=w-310%2Ch-700%2Cfo-auto)
 
-### Now what?
+![App Screenshot](https://ik.imagekit.io/gvspmkmsw/personal/phonePePGReactNative/Screenshot_2024-07-07-23-37-30-02_7fc543eb474dc6b9b5ba7ae40a9724d1.jpg?updatedAt=1720375834548&tr=w-310%2Ch-700%2Cfo-auto)
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+![App Screenshot](https://ik.imagekit.io/gvspmkmsw/personal/phonePePGReactNative/Screenshot_2024-07-07-23-37-34-27_73807bab6145e2fa1235865f09fbddb6.jpg?updatedAt=1720375834521&tr=w-310%2Ch-700%2Cfo-auto)
 
-# Troubleshooting
+![App Screenshot](https://ik.imagekit.io/gvspmkmsw/personal/phonePePGReactNative/Screenshot_2024-07-07-23-37-40-80_73807bab6145e2fa1235865f09fbddb6.jpg?updatedAt=1720375834589&tr=w-310%2Ch-700%2Cfo-auto)
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+![App Screenshot](https://ik.imagekit.io/gvspmkmsw/personal/phonePePGReactNative/Screenshot_2024-07-07-23-37-43-91_73807bab6145e2fa1235865f09fbddb6.jpg?updatedAt=1720375834486&tr=w-310%2Ch-700%2Cfo-auto)
 
-# Learn More
+![App Screenshot](https://ik.imagekit.io/gvspmkmsw/personal/phonePePGReactNative/Screenshot_2024-07-07-23-37-49-64_73807bab6145e2fa1235865f09fbddb6.jpg?updatedAt=1720375834592&tr=w-310%2Ch-700%2Cfo-auto)
 
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+![App Screenshot](https://ik.imagekit.io/gvspmkmsw/personal/phonePePGReactNative/Screenshot_2024-07-07-23-37-52-00_7fc543eb474dc6b9b5ba7ae40a9724d1.jpg?updatedAt=1720375834409&tr=w-310%2Ch-700%2Cfo-auto)

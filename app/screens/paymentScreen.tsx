@@ -8,12 +8,13 @@ import {
   View,
 } from 'react-native';
 import MySnackbar from '../components/snackBar';
+import {phonePeInit, startPayment} from '../phonePe/phonePe';
 
 const PaymentScreen = () => {
   const [rs, setRs] = useState('0');
   const [paise, setPaise] = useState('0');
   //handel submit
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     //convert in paise
 
     const amount = parseInt(rs) * 100 + parseInt(paise);
@@ -22,6 +23,21 @@ const PaymentScreen = () => {
       return;
     }
     //initiate phone pe
+
+    try {
+      const res = await phonePeInit();
+      if (!res) {
+        MySnackbar('PhonePe Initialization failed! ');
+      }
+      const txnId = 'TXN-' + `${Date.now()}`;
+      const paymentStatus = await startPayment(txnId, amount);
+      if (!paymentStatus) {
+        MySnackbar('Payment failed! ');
+      }
+      MySnackbar('Payment success !');
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <View>
